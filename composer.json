@@ -1,0 +1,18 @@
+{
+    "name": "cjdevstudios/dev-bundle",
+    "description": "A Symfony bundle of developer tools",
+    "type": "library",
+    "license": "GPLv2+",
+    "authors": [
+        {
+            "name": "Curtis Conard",
+            "email": "cconard@cjdevstudios.com"
+        }
+    ],
+    "require": {
+        "symfony/http-kernel": "^v5.0",
+        "symfony/dependency-injection": "^5.0",
+        "symfony/stopwatch": "^5.0",
+        "symfony/http-foundation": "^5.0"
+    }
+}
