@@ -23,7 +23,7 @@ final class Stopwatch {
     * @since 1.0.0
     * @var SymfonyStopwatch
     */
-   private static SymfonyStopwatch $stopwatch;
+   private static $stopwatch;
 
    /**
     * @since 1.0.0

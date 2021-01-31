@@ -10,8 +10,13 @@
 
 namespace CJDevStudios\DevBundle;
 
+use CJDevStudios\DevBundle\DependencyInjection\DevExtension;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
 class DevBundle extends Bundle {
 
+   public function getContainerExtension()
+   {
+      return new DevExtension();
+   }
 }
