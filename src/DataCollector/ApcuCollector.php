@@ -32,11 +32,14 @@ class ApcuCollector extends DataCollector {
         $i = floor(log($memory) / log(1024));
         $memory_value = sprintf('%.02F', $memory / (1024 ** $i)) * 1 . ' ' . $units[(int) $i];
 
+        $total_calls = $info['num_hits'] + $info['num_misses'];
+        $hit_rate = $total_calls > 0 ? (float) ($info['num_hits'] / $total_calls) * 100 : 0;
+
         $this->data = [
             'count'         => (int) $info['num_entries'],
             'hits'          => (int) $info['num_hits'],
             'misses'        => (int) $info['num_misses'],
-            'hitrate'       => (float) ($info['num_hits'] /  ($info['num_hits'] + $info['num_misses'])) * 100,
+            'hitrate'       => $hit_rate,
             'memory_usage'  => $memory_value,
             'memory_raw'    => $memory
         ];
